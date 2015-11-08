@@ -6,7 +6,7 @@
   
   function signin() {
     lock.show({
-        callbackURL: 'http://localhost:8000/'
+        callbackURL: 'https://localhost:8000/'
       , responseType: 'code'
       , authParams: {
         scope: 'openid profile'
