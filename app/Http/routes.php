@@ -12,5 +12,3 @@
 */
 
 Route::get('/', 'IndexController@index');
-
-Route::get('/auth0/callback', '\Auth0\Login\Auth0Controller@callback');
