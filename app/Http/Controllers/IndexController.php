@@ -13,7 +13,6 @@ session_start();
 class IndexController extends Controller
 {
     public function index(){
-    	Session::put('test', 'test');
     	if(Session::has('token')){
     		$token 		= Session::get('token');
     		$nickname 	= Session::get('nickname');
@@ -35,7 +34,7 @@ class IndexController extends Controller
     	Session::put('token', $_POST['login_token']);
     	Session::put('nickname', $_POST['nickname']);
 
-    	return redirect('/');
+    	// return redirect('/');
     	// echo "<script>alert('".Session::get('token')."')</script>";
     	// $_SESSION['token'] 		= $_POST['login_token'];
     	// $_SESSION['nickname']	= $_POST['nickname']; 
