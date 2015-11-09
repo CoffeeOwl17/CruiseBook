@@ -32,7 +32,10 @@
               <li><a href="./">{!! $nickname !!}</span></a></li>
               <li class="active"><a href="/logout">Logout</a></li>
             @else
-              <li class="active"><a href="" class="btn-login">Organization Login<span class="sr-only">(current)</span></a></li>
+              <form class="navbar-form navbar-left" role="search" method="post">
+                <button type="submit" class="btn btn-default btn-login">Organization Login</button>
+              </form>
+              <!-- <li class="active"><a href="" class="btn-login">Organization Login<span class="sr-only">(current)</span></a></li> -->
               <!-- <input type="submit" class="btn-login" /> -->
             @endif
 
