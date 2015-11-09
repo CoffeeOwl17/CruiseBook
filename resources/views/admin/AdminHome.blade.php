@@ -1,7 +1,7 @@
 @extends('shared.app')
   
   @section('script')
-    @include('_indexJs')
+    @include('admin._AdminHomeJs')
   @endsection
 
   <style>
@@ -22,13 +22,13 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Booking</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="#">Add Cruise</a></li>
+            <li><a href="#">Edit Cruise</a></li>
+            <li><a href="#">View Cruise</a></li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a class="btn-login" href="">Organization Login</a></li>
+          <ul class="nav navbar-nav navbar-right admin-portal">
+            <li><a class="nickname">Booking</a></li>
+            <li class="active"><a class="logout" href="">Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

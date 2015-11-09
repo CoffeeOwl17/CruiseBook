@@ -13,6 +13,8 @@ session_start();
 class IndexController extends Controller
 {
     public function index(){
+    	$token = "";
+
     	if(Session::has('token')){
     		$token 		= Session::get('token');
     		$nickname 	= Session::get('nickname');
@@ -30,13 +32,7 @@ class IndexController extends Controller
     	return view('index', $data);
     }
 
-    public function login(){
-    	Session::put('token', $_POST['login_token']);
-    	Session::put('nickname', $_POST['nickname']);
-
-    	// return redirect('/');
-    	// echo "<script>alert('".Session::get('token')."')</script>";
-    	// $_SESSION['token'] 		= $_POST['login_token'];
-    	// $_SESSION['nickname']	= $_POST['nickname']; 
+    public function admin(){
+    	return view('admin.AdminHome');
     }
 }

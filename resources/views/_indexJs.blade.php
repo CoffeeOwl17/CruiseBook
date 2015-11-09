@@ -1,6 +1,7 @@
 <script>
   var lock = null;
   $(document).ready(function() {
+
       lock = new Auth0Lock('DyxDQuLCT7Ul4tLPgOMvptTDszBKNyDz', 'yungtk17.auth0.com');
       var userProfile;
 
@@ -19,8 +20,10 @@
             // Save the profile
 
             userProfile = profile;
-            $.post( "/login", { login_token: token, nickname: userProfile['nickname'] } );
-            location.reload();
+            localStorage.setItem('nickname', userProfile['nickname']);
+            window.location.href = "/admin";
+            // $.post( "/login", { login_token: token, nickname: userProfile['nickname'] } );
+            // location.reload();
             // $('.nick').text(token);
           }
         });
@@ -35,6 +38,7 @@
           }
         }
       });
+
 
   });
 </script>

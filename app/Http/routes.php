@@ -15,6 +15,6 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Auth0\SDK\Auth0;
 
 Route::get('/', 'IndexController@index');
-Route::post('/login', 'IndexController@login');
+Route::get('/admin', 'IndexController@admin');
 Route::get('/logout', 'LogoutController@index');
 
