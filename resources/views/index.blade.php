@@ -1,59 +1,48 @@
-<!doctype html>
+@extends('shared.app')
+  
+  @section('script')
+    @include('_indexJs')
+  @endsection
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Pricess Cruise</title>
-    <meta name="_token" content="{{ csrf_token() }}"/>
-    <script src="{{ URL::asset('js/jquery-2.1.4.min.js') }}"></script>
-    <!-- Auth0 lock script -->
-    <script src="//cdn.auth0.com/js/lock-7.9.min.js"></script>
+  <style>
+    body { padding-top: 70px; }
+  </style>
 
-    <!-- Setting the right viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  </head>
+  @section('content')
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Pricess Cruise</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">Booking</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            @if($token != "") 
+              <li><a href="./">{!! $nickname !!}</span></a></li>
+              <li class="active"><a href="/logout">Logout</a></li>
+            @else
+              <li class="active"><a href="" class="btn-login">Organization Login<span class="sr-only">(current)</span></a></li>
+              <!-- <input type="submit" class="btn-login" /> -->
+            @endif
 
-  <script>
-    var lock = null;
-    $(document).ready(function() {
-        lock = new Auth0Lock('PfzhgD1FRibmgL6BRIK7ZUpiyiUSh5ug', 'yungtk17.auth0.com');
-        var userProfile;
-
-        $('.btn-login').click(function(e) {
-          e.preventDefault();
-          lock.show(function(err, profile, token) {
-            if (err) {
-              // Error callback
-              alert(err);
-            } else {
-              // Success callback
-
-              // Save the JWT token.
-              localStorage.setItem('userToken', token);
-
-              // Save the profile
-              userProfile = profile;
-              $('.nick').text(userProfile.nickname);
-            }
-          });
-        });
-
-        $.ajaxSetup({
-          'beforeSend': function(xhr) {
-            if (localStorage.getItem('userToken')) {
-              xhr.setRequestHeader('Authorization',
-                    'Bearer ' + localStorage.getItem('userToken'));
-            }
-          }
-        });
-
-    });
-  </script>
-
-  <body>
-    <form method="post">
-      <p>His name is <span class="nick"></span></p>
-      <input type="submit" class="btn-login" />
+            <!-- <li class="active"><a href="./">Organization Login<span class="sr-only">(current)</span></a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <form>
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      
     </form>
-  </body>   
-</html>
+  @endsection
