@@ -32,7 +32,4 @@ class IndexController extends Controller
     	return view('index', $data);
     }
 
-    public function admin(){
-    	return view('admin.AdminHome');
-    }
 }

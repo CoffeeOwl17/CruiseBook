@@ -12,5 +12,7 @@
         localStorage.clear();
 
       });
+
+      $('#package_table').DataTable();
   });
 </script>

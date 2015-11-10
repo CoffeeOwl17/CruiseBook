@@ -15,6 +15,10 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Auth0\SDK\Auth0;
 
 Route::get('/', 'IndexController@index');
-Route::get('/admin', 'IndexController@admin');
-Route::get('/logout', 'LogoutController@index');
+Route::get('/admin', 'AdminController@index');
+Route::post('/admin', 'AdminController@saveCruise');
+Route::get('/search/{action}', 'AdminController@search');
+Route::get('/edit/{id}', 'AdminController@edit');
+Route::post('/edit/{id}', 'AdminController@updateCruise');
+Route::get('/view/{id}', 'AdminController@view');
 
