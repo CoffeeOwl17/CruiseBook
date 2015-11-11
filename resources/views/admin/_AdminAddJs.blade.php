@@ -45,7 +45,7 @@
 
       $('#addCruise').bind('submit',function(e){
         if(!($("input#inputCruise").val() && $("input#datepicker-from").val() && $("input#datepicker-until").val() 
-          && $("input#departureLocation").val() && $("input#arrivalLocation").val())){
+          && $("input#departureLocation").val() && $("input#arrivalLocation").val() && $("input#price").val())){
           alert('All fields must be filled');
           e.preventDefault();
         } 

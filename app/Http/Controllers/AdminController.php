@@ -25,6 +25,7 @@ class AdminController extends Controller
     	$package->arrival_date 			= date("Y-m-d", strtotime($_POST['datepicker-until'])); 
     	$package->departure_location 	= $_POST['departureLocation'];
     	$package->arrival_location 		= $_POST['arrivalLocation'];
+        $package->price                 = $_POST['price'];
     	$package->cruise_id 			= $_POST['cruiseID'];
 
     	 
@@ -64,6 +65,7 @@ class AdminController extends Controller
         $package->arrival_date          = date("Y-m-d", strtotime($_POST['datepicker-until'])); 
         $package->departure_location    = $_POST['departureLocation'];
         $package->arrival_location      = $_POST['arrivalLocation'];
+        $package->price                 = $_POST['price'];
         $package->cruise_id             = $_POST['cruiseID'];
 
          

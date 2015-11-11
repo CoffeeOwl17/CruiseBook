@@ -21,4 +21,7 @@ Route::get('/search/{action}', 'AdminController@search');
 Route::get('/edit/{id}', 'AdminController@edit');
 Route::post('/edit/{id}', 'AdminController@updateCruise');
 Route::get('/view/{id}', 'AdminController@view');
-
+Route::get('/booking', 'BookingController@search');
+Route::get('/booking/{cruiseID}', 'BookingController@chooseCruise');
+Route::get('/booking/{cruiseID}/{cabinID}', 'BookingController@passengerInfo');
+Route::post('/booking/{cruiseID}/{cabinID}', 'BookingController@confirmPayment');

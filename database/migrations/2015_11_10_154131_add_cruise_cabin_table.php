@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCruisePackageTable extends Migration
+class AddCruiseCabinTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,16 @@ class CreateCruisePackageTable extends Migration
      */
     public function up()
     {
-        Schema::create('cruise_package', function (Blueprint $table) {
+        Schema::create('cruise_cabin', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('package_name');
-            $table->date('departure_date');
-            $table->date('arrival_date');
-            $table->string('departure_location');
-            $table->string('arrival_location');
-            $table->decimal('price', 8, 4);
+            $table->string('cruise_cabin');
+            $table->integer('cabinClass_id')->unsigned();
             $table->integer('cruise_id')->unsigned();
+
+            $table->foreign('cabinClass_id')
+                ->references('cabinClass_id')->on('cabin_class')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
 
             $table->foreign('cruise_id')
                 ->references('cruise_id')->on('cruise')
@@ -36,6 +37,6 @@ class CreateCruisePackageTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cruise_package');
+        Schema::drop('cruise_cabin');
     }
 }

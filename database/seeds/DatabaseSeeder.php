@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(CruiseTableSeeder::class);
+        $this->call(CabinClassTableSeeder::class);
+        $this->call(CruiseCabinTableSeeder::class);
 
         Model::reguard();
     }

@@ -55,6 +55,12 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="col-sm-2 control-label">Price (RM)</label>
+          <div class="col-sm-10">
+            <input type="number" id="price" name="price" min="100.00" step="10.00" class="form-control" value="100" placeholder="Price..."/>
+          </div>
+        </div>
+        <div class="form-group">
           <label class="col-sm-2 control-label">Cruise</label>
           <div class="col-sm-10">
             <select id="cruiseID" name="cruiseID" class="form-control">

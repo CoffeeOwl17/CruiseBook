@@ -4,37 +4,17 @@
     @include('_indexJs')
   @endsection
 
-  <style>
-    body { padding-top: 70px; }
-  </style>
-
   @section('content')
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Pricess Cruise</a>
+    @include('shared.menu-bar')
+    <div class="container-fluid">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron">
+          <h1>Welcome to Pricess Cruise</h1>
+          <h3>Pricess Cruise is the well known, and largest cruise operator in the world.</h3>
+          <p><font color="grey">Book your cruise ticket right, to start your amazing journey!</font></p>
+          <p><a class="btn btn-primary btn-lg" href="/booking">Book Ticket</a></p>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">Booking</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a class="btn-login" href="">Organization Login</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
       </div>
-    </nav>
-    <form>
-      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-      
-    </form>
+    </div>
+    
   @endsection

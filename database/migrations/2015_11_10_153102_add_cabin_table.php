@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCruiseTable extends Migration
+class AddCabinTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,10 @@ class CreateCruiseTable extends Migration
      */
     public function up()
     {
-        Schema::create('cruise', function (Blueprint $table) {
-            $table->increments('cruise_id');
-            $table->string('cruise_name');
+        Schema::create('cabin_class', function (Blueprint $table) {
+            $table->increments('cabinClass_id');
+            $table->string('class');
+            $table->decimal('price', 7, 2);
         });
     }
 
@@ -25,6 +26,6 @@ class CreateCruiseTable extends Migration
      */
     public function down()
     {
-        Schema::drop('cruise');
+        Schema::drop('cabin_class');
     }
 }

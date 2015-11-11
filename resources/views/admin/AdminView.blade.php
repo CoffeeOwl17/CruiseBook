@@ -28,6 +28,7 @@
             <th>Departure</th>
             <th>Arrival Date</th>
             <th>Arrival</th>
+            <th>Price (RM)</th>
             <th>Cruise</th>
           <tr>
         </thead>
@@ -38,6 +39,7 @@
             <td>{!! $package->departure_location!!}</td>
             <td>{!! $package->arrival_date!!}</td>
             <td>{!! $package->arrival_location!!}</td>
+            <td>{!! $package->price!!}</td>
             <td>{!! $package->cruise->cruise_name!!}</td>
           </tr>
         </tbody>

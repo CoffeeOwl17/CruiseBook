@@ -13,4 +13,8 @@ class cruise extends Model
     public function packages(){
     	return $this->hasMany('App\cruise_package', 'cruise_id', 'cruise_id');
     }
+
+    public function cabin(){
+    	return $this->belongsToMany('App\cabinclass', 'cruise_id', 'cruise_id');
+    }
 }
