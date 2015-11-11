@@ -19,19 +19,13 @@ class AddReservationTable extends Migration
             $table->integer('cruise_cabin')->unsigned();
 
             $table->foreign('passenger_id')
-                ->references('passenger_id')->on('passenger')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->references('passenger_id')->on('passenger');
 
             $table->foreign('package_id')
-                ->references('id')->on('cruise_package')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->references('id')->on('cruise_package');
 
             $table->foreign('cruise_cabin')
-                ->references('id')->on('cruise_cabin')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->references('id')->on('cruise_cabin');
         });
     }
 

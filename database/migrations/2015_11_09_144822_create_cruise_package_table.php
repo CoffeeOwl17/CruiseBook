@@ -23,9 +23,7 @@ class CreateCruisePackageTable extends Migration
             $table->integer('cruise_id')->unsigned();
 
             $table->foreign('cruise_id')
-                ->references('cruise_id')->on('cruise')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+                ->references('cruise_id')->on('cruise');
         });
     }
 

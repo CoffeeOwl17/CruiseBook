@@ -32,4 +32,12 @@ class IndexController extends Controller
     	return view('index', $data);
     }
 
+    public function about(){
+        return view('About');
+    }
+
+    public function contact(){
+        return view('Contact');
+    }
+
 }
