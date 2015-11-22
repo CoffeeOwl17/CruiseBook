@@ -8,11 +8,15 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App;
 use Session;
+use AIServer;
 
 class AdminController extends Controller
 {
     public function index(){
     	$cruises = App\cruise::all();
+
+        AIServer::trackEvent('admin index');
+        AIServer::flush();
 
     	return view('admin.AdminAdd', ['cruises' => $cruises]);
     }
@@ -35,6 +39,9 @@ class AdminController extends Controller
     	Session::flash('message', 'Create new cruise package successfully');
     	Session::flash('alert-class', 'alert-success'); 
 
+        AIServer::trackEvent('insert cruise');
+        AIServer::flush();
+
     	return redirect('/admin');
     }
 
@@ -44,6 +51,10 @@ class AdminController extends Controller
             "action"    => $action,
             "packages"  => $packages        
             );
+
+        AIServer::trackEvent('search cruise');
+        AIServer::flush();
+
         return view('admin.AdminSearch', $data);
     }
 
@@ -54,6 +65,10 @@ class AdminController extends Controller
             "package"   => $package,
             "cruises"   => $cruises        
             );
+
+        AIServer::trackEvent('edit cruise');
+        AIServer::flush();
+
         return view('admin.AdminEdit', $data);
     }
 
@@ -75,6 +90,9 @@ class AdminController extends Controller
         Session::flash('message', 'Package '.$id.': Update successfully');
         Session::flash('alert-class', 'alert-success'); 
 
+        AIServer::trackEvent('update cruise');
+        AIServer::flush();
+
         return redirect('/search/edit');
     }
 
@@ -84,6 +102,10 @@ class AdminController extends Controller
         $data       = array(
             "package"   => $package      
             );
+
+        AIServer::trackEvent('view cruise');
+        AIServer::flush();
+
         return view('admin.AdminView', $data);
     }
 }

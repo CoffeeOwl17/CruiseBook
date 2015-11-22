@@ -148,6 +148,9 @@ return [
         //Auth0
         Auth0\Login\LoginServiceProvider::class,
 
+        //application insight
+        Marchie\MSApplicationInsightsLaravel\Providers\MSApplicationInsightsServiceProvider::class,
+
     ],
 
     /*
@@ -198,6 +201,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Auth0'     => Auth0\Login\Facade\Auth0::class,
 
+        'AIClient' => Marchie\MSApplicationInsightsLaravel\Facades\MSApplicationInsightsClientFacade::class,
+        'AIServer' => Marchie\MSApplicationInsightsLaravel\Facades\MSApplicationInsightsServerFacade::class,
     ],
 
 ];

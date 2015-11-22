@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App;
 use DB;
 use Session;
+use AIServer;
 
 class BookingController extends Controller
 {
@@ -17,6 +18,10 @@ class BookingController extends Controller
         $data       = array(
             "packages"  => $packages        
             );
+
+        AIServer::trackEvent('passenger search cruise');
+        AIServer::flush();
+
         return view('book.SearchCruise', $data);
     }
 
@@ -36,6 +41,10 @@ class BookingController extends Controller
     		"classes"		=> $classes,
     		"reservations"	=> $reservations
     		);
+
+        AIServer::trackEvent('passenger choose cabin');
+        AIServer::flush();
+
     	return view('book.Cabin', $data);
     	// return ($reservations);
     }
@@ -43,6 +52,10 @@ class BookingController extends Controller
     public function passengerInfo($package, $cabin){
     	$chosenPackage	= App\cruise_package::where('id', $package)->first();
     	$chosenCabin	= App\cruise_cabin::where('id', $cabin)->first();
+
+        AIServer::trackEvent('redirect to passenger registration');
+        AIServer::flush();
+
     	return view('book.Passenger', ["package"=>$package, "cabin"=>$cabin, "cabin_price"=>$chosenCabin->cruiseclass->price, "package_price"	=> $chosenPackage->price ]);
 
     }
@@ -74,6 +87,10 @@ class BookingController extends Controller
     		Session::flash('message', 'Thank you Ms. '.$_POST['txtFirstName'].' for booking our cruise ticket. Enjoy your trip!');
     	}
         Session::flash('alert-class', 'alert-success'); 
+
+        AIServer::trackEvent('complete reservation');
+        AIServer::flush();
+
         return redirect('/booking');
     }
 }

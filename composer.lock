@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bcc4b4654ea1abe4d65fdbf462a5f398",
-    "content-hash": "f0c7d54a9aae206ff32697e95a177b19",
+    "hash": "2184001a1d3504ef44de703e9a098fb5",
+    "content-hash": "c94b48f3a0e2ff3efd1b416d4145124d",
     "packages": [
         {
             "name": "adoy/oauth2",
@@ -899,6 +899,56 @@
                 "storage"
             ],
             "time": "2015-09-30 22:26:59"
+        },
+        {
+            "name": "marchie/ms-application-insights-laravel",
+            "version": "v0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Marchie/ms-application-insights-laravel.git",
+                "reference": "ab25fa8c00651e9951c3afe8e88112804b530aee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Marchie/ms-application-insights-laravel/zipball/ab25fa8c00651e9951c3afe8e88112804b530aee",
+                "reference": "ab25fa8c00651e9951c3afe8e88112804b530aee",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "~5.0",
+                "illuminate/support": "~5.0",
+                "laravel/framework": "~5.0",
+                "microsoft/application-insights": "^0.3.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Marchie\\MSApplicationInsightsLaravel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris March",
+                    "email": "marchie@marchie.net",
+                    "homepage": "http://www.marchie.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Microsoft Azure Application Insights for Laravel 5",
+            "keywords": [
+                "Application Insights",
+                "azure",
+                "laravel",
+                "logging",
+                "microsoft",
+                "monitoring"
+            ],
+            "time": "2015-10-27 16:44:12"
         },
         {
             "name": "microsoft/application-insights",

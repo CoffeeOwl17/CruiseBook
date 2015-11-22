@@ -12,6 +12,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
     @yield('additional_include')
+    {!! AIClient::javascript() !!}
   </head>
 
   @yield('script')
