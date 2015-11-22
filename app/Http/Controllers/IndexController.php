@@ -29,6 +29,12 @@ class IndexController extends Controller
     			"nickname"	=> ""
     			);
     	}
+
+        $telemetryClient = new \ApplicationInsights\Telemetry_Client();
+        $telemetryClient->getContext()->setInstrumentationKey('42df5617-a39e-4d1f-a8a4-342e3650a4f2');
+        $telemetryClient->trackEvent('index');
+        $telemetryClient->flush();
+
     	return view('index', $data);
     }
 

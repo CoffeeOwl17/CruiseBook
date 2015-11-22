@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "22cf1ae2064809474931b98821da7d3a",
-    "content-hash": "31a1434b54470187117d998b65d42369",
+    "hash": "bcc4b4654ea1abe4d65fdbf462a5f398",
+    "content-hash": "f0c7d54a9aae206ff32697e95a177b19",
     "packages": [
         {
             "name": "adoy/oauth2",
@@ -899,6 +899,49 @@
                 "storage"
             ],
             "time": "2015-09-30 22:26:59"
+        },
+        {
+            "name": "microsoft/application-insights",
+            "version": "0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Microsoft/AppInsights-PHP.git",
+                "reference": "7e0779f1eb90108abd50636d0fe3972274dabba4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Microsoft/AppInsights-PHP/zipball/7e0779f1eb90108abd50636d0fe3972274dabba4",
+                "reference": "7e0779f1eb90108abd50636d0fe3972274dabba4",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "evert/phpdoc-md": "~0.0.7",
+                "phpunit/phpunit": "~4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ApplicationInsights\\": "ApplicationInsights/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "This project extends the Application Insights API surface to support PHP.",
+            "homepage": "https://github.com/Microsoft/AppInsights-PHP",
+            "keywords": [
+                "Insights",
+                "log",
+                "logging",
+                "monitoring",
+                "telemetry"
+            ],
+            "time": "2015-01-20 18:57:13"
         },
         {
             "name": "monolog/monolog",
